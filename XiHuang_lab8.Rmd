@@ -1,6 +1,6 @@
 ---
-title: "lab8"
-author: "Xi Huang(Nicole)"
+title: "Untitled"
+author: ""
 date: ""
 output: 
   html_document:
@@ -18,5 +18,9 @@ includeSourceDocuments()
 ```
 <!-- Don't edit the material above this line -->
 
+```{r}
+print('HI')
+print("THis is the forth tryyyyy")
 
-This is lab  blah blah blah
+```
+
