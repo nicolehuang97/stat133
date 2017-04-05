@@ -18,9 +18,4 @@ includeSourceDocuments()
 ```
 <!-- Don't edit the material above this line -->
 
-```{r}
-print('HI')
-print("THis is the forth tryyyyy")
-
-```
-
+hiiiiii
