@@ -1,0 +1,47 @@
+---
+title: "Untitled"
+author: ""
+date: ""
+output: 
+  html_document:
+    fig_height: 3
+    fig_width: 5
+---
+<!-- Don't edit in between this line and the one below -->
+```{r include=FALSE}
+# Don't delete this chunk if you are using the DataComputing package
+library(DataComputing)
+```
+*Source file* 
+```{r, results='asis', echo=FALSE}
+includeSourceDocuments()
+```
+<!-- Don't edit the material above this line -->
+
+```{r}
+library(XML)
+
+doc <- newXMLDoc()  
+root <- newXMLNode("toplevel", doc = doc)   
+child1 <- newXMLNode("level1", parent = root)
+newXMLNode("level2", "This is the content", parent = child1)
+child1a <- newXMLNode("level1a", parent = root)
+newXMLNode("level2a", "This is the other content", parent = child1a)
+saveXML(doc, file = "~/Desktop/simple.xml")
+```
+
+```{r}
+library(XML)
+
+doc <- newXMLDoc()
+root <- newXMLNode("kml",namespaceDefinitions = "http://www.opengis.net/kml/2.2", doc = doc)
+docmt <- newXMLNode("Document", parent = root)
+pm <- newXMLNode("Placemark", parent = docmt)
+name <- newXMLNode("name", "New York City", parent = pm)
+description <- newXMLNode("description", "New York City", parent = pm)
+pt <- newXMLNode("Point", parent = pm)
+newXMLNode("coordinates", "-74.006393,40.714172,0", parent = pt)
+saveXML(doc, "~/Desktop/mysimple.kml")  
+```
+
+
